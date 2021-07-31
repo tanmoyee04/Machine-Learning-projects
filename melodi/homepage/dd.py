@@ -6,7 +6,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.ensemble import RandomForestClassifier
 
-songs= pd.read_csv("tracks.csv")
+#songs= pd.read_csv("F:/anaconda3/Workplace/Django_projects/melodi/homepage/tracks.csv")
+songs= pd.read_csv("homepage/tracks.csv")
+
 
 songs['loudness'] = -((songs['loudness'])/10)
 songs['tempo'] = songs['tempo']/250
@@ -67,4 +69,4 @@ def process(song_input):
 
     z = songs.groupby('Genre').groups[pred[0]]
     songs["name"].iloc[z].head(10).to_excel("temp.xlsx")
-    print(pred[0])
+    return pred[0]

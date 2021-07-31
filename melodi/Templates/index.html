@@ -181,12 +181,12 @@
 										<form method="post" enctype="multipart/form-data" action="/">
 											{% csrf_token %}
 										  <div class="user-box">
-											<input type="text" name="songID" required="" autocomplete="off" value={{songname}}>
+											<input type="text" name="songID" required="" autocomplete="off" value='{{songname}}'>
 											<label>Type the song</label>
 										  </div>
 										  {% if genre %}
 										  <div class="user-box">
-											<input type="text" name="genreID" value={{genre}}><br>
+											<input type="text" name="genreID" value='{{genre}}'><br>
 											<label class="active">Genre</label>
 										  </div>
 										  {% endif %}
